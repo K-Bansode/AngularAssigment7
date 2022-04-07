@@ -1,0 +1,66 @@
+
+
+<div class="main">
+	<div id="section">
+
+    <button type="button" class="btn btn-primary" id="addUser">+ Add User</button>
+
+
+</div>
+<div class="cont">
+	
+	<div class="utility">
+		<div ngbDropdown class="d-inline-block">
+		  <button  class="sort" id="dropdownBasic1" ngbDropdownToggle>Sort By</button>
+		  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+			<button ngbDropdownItem  [ngModel]="whichsort" (click)="AtoZSort()" name="btn" ngDefaultControl>A to Z</button>
+			<button ngbDropdownItem  [ngModel]="whichsort" (click)="ZtoASort()" ngDefaultControl>Z to A</button>
+		  </div>
+		</div>
+
+		<div ngbDropdown class="d-inline-block">
+			<button  class="filter" id="dropdownBasic1" ngbDropdownToggle>Filter By</button>
+			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+			 <button ngbDropdownItem   name="user" [ngModel]="filterdata" (click)="userFilter()" ngDefaultControl>User</button>
+			<button ngbDropdownItem  name="admin" [ngModel]="filterdata" (click)="adminFilter()"ngDefaultControl >Admin</button>
+			</div>
+		  </div>
+  
+		<div class="form-group" id="searchbox">
+			<div class="form-outline">
+			  <input id="search-input" name="search" type="search" id="form1" class="form-control" [(ngModel)]="rolesearch" placeholder="search role"/> 
+			</div>
+		  </div>
+	</div>
+	
+<table>
+	<tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>Email</th>
+    <th>Role</th>
+	<th>status</th>
+    <th>Action</th>
+	</tr>
+	<tr *ngFor="let user of collection | paginate: { itemsPerPage: 5, currentPage: p,
+	
+		totalItems:totalLength 
+	
+	} |sortBy:whichsort:'firstname' |filter:rolesearch |filter:filterdata">
+	<td>{{user.id}}</td>
+	<td>{{user.firstname}}</td>
+	<td>{{user.email}}</td>
+    <td>{{user.role}}</td>
+	<td>{{user.status}}</td>
+    <td> <a routerLink="/edit-user-compnent/{{user.id}}"><button id="edit">edit</button></a>
+		<button id="delete" (click)="deleteUser(user.id)">Delete</button>
+		
+</td>
+	<tr>
+</table>
+</div>
+
+<div class="paginate">
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>

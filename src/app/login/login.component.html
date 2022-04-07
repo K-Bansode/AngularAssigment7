@@ -1,0 +1,31 @@
+<section class="vh-100" id="cont">
+    <div class="container py-5 h-100">
+      <div class="row  align-items-center justify-content-center h-100" id="login">
+        
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1" >
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form1Example13" class="form-control form-control-lg" [(ngModel)]="userID" name="userId"/>
+              <label class="form-label" for="form1Example13">Email address</label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form1Example23" class="form-control form-control-lg"  [(ngModel)]="userPass" name="userPass" />
+              <label class="form-label" for="form1Example23">Password</label>
+            </div>
+  
+            
+            
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="validate()" >Sign in</button>
+  
+            <a href="#!">Forgot password?</a>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

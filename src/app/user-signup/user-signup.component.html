@@ -1,0 +1,53 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-12 nav">
+            <button class="loginbt " (click)="onclickfun()">login/sign up</button>
+        </div>
+      <div class="col-sm-6">
+            <img src="assets/images/registration.png"/>
+      </div>
+      <div class="col-sm-6 " >
+          
+        <form [formGroup]="registerUser" (ngSubmit)="onsubmit(registerUser.value)" >
+            <h4>sign up as a new user</h4>
+            <p>or allready registerd? <a routerLink="/user-sign-in">Login now</a></p>
+            <!-- Email input -->
+            <div class="form-outline mb-4 form-group" >
+              <input type="text" formControlName="firstname" class="form-control" placeholder="First Name"  />
+              <span *ngIf="nameValidate && nameValidate.invalid && nameValidate.touched">This field is required</span>
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-group">
+              <input type="text" formControlName="lastname" class="form-control" placeholder="Last Name"/>
+              <span *ngIf="lastnameValidate && lastnameValidate.invalid && lastnameValidate.touched">This field is required</span>
+            </div>
+          
+            <div class="form-outline mb-4 form-group">
+                <input type="email" formControlName="email" class="form-control" placeholder="EmailID" />
+                <span *ngIf="emailvalidate && emailvalidate.invalid && emailvalidate.touched">This field is required & use correct mail format</span>
+              </div>
+
+              <div class="form-outline mb-4 form-group">
+                <input type="password" formControlName="password" class="form-control" placeholder="Create Password" />
+                <span *ngIf="passvalidate && passvalidate.invalid && passvalidate.touched">Password field is invalid the pass length >5</span>
+            
+              </div>
+
+              <div class="form-outline mb-4 form-group">
+                <input type="password" formControlName="cnfPass" class="form-control"  placeholder="Confrim Password" />
+                <span *ngIf="cnfPassValidate && cnfPassValidate.invalid && cnfPassValidate.touched">This field is required</span>
+              </div>
+            
+          
+            <!-- Submit button -->
+            <button [disabled]="registerUser.invalid" type="submit" class="btn btn-primary btn-block mb-4 signInbt">Register Now</button>
+          
+            <!-- Register buttons -->
+            
+          </form>
+      </div>
+      
+    </div>
+  </div>

@@ -1,0 +1,40 @@
+img{
+    margin-top:30% ;
+    
+}
+form{
+    margin-top: 12%;
+    
+}
+input{
+    width:80%;
+    margin-left:12%;
+}
+h4{
+    margin-left:12%;
+    margin-bottom: 6%;
+}
+p{
+    margin-left:12%;
+    margin-bottom: 8%;
+}
+.signInbt{
+    width: 80%;
+    margin-left:12%;
+    margin-top: 12%;
+}
+.loginbt{
+    margin-left: 90%;
+    border-radius: 0.5vh;
+    background-color: white;
+}
+.space{
+    margin-left:12%;
+}
+#info{
+    border:1px solid rgb(240,240,240);
+}
+span{
+    color: red;
+    margin-left: 12%;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    
+    <div class="row">
+        <div class="col-sm-12 nav">
+            <button class="loginbt ">Login</button>
+        </div>
+      <div class="col-sm-6">
+            <img src="assets/images/login.png"/>
+      </div>
+      <div class="col-sm-6 "  >
+          
+        <form id="info" [formGroup]="loginUser" (ngSubmit)="onsubmit(loginUser.value)" >
+            <h4>Login</h4>
+            <!-- Email input -->
+            <div class="form-outline mb-4 form-group">
+                <label class="space" for="email">email</label>
+              <input type="email" class="form-control"  formControlName="email"  [(ngModel)]="userID"/>
+              <span *ngIf="emailValidate && emailValidate.invalid && emailValidate.touched">This field is required use  & correct mail format</span>
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4 form-group">
+                <label class="space" for="password">password</label>
+              <input type="password" formControlName="password" class="form-control"   [(ngModel)]="userPass"/>
+              <span *ngIf="passValidate && passValidate.invalid && passValidate.touched">This field is required & min length 5</span>
+            </div>
+            <!-- 2 column grid layout for inline styling -->
+            
+            <a  class="space" routerLink="/forgot-password-user">Forgot Password  </a>
+          
+            <!-- Submit button -->
+            <button [disabled]="loginUser.invalid" type="submit" class="btn btn-primary btn-block mb-4 signInbt"  >Login</button>
+          
+            <!-- Register buttons -->
+
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                    <p>New User?<a routerLink="/user-signup">Sign Up </a></p>
+                </div>
+            
+              
+              </div>
+            
+          </form>
+      </div>
+      
+    </div>
+  </div>
+  

@@ -1,0 +1,73 @@
+#section{
+    height: 5vh;
+    width: 90vw;
+    margin-left: 4vw;
+
+}
+
+#addUser{
+
+    float: right;
+    color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+   
+    margin-top: 3vh;
+    border-radius: 1vh;
+    
+}
+.cont{
+    margin-top: 10vh;
+    background-color:white;
+}
+td{
+    padding-left: 10vw;
+    padding-top: 5vh;
+}
+th{
+    padding-left: 10vw;
+   
+}
+
+#delete{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    height:4vh;
+    width:5vw;
+}
+#edit{
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    height:4vh;
+    width:5vw;
+    margin-right: 0.5vw;
+}
+.paginate{
+    margin-top: 9vh;
+    margin-right: 4vw;
+    float: right;
+}
+.sort{
+    
+    background-color:rgb(240, 240, 240);
+    color:black;
+    border-radius: 1vh;
+    margin-left: 1vw;
+}
+
+ 
+.filter{
+    border-radius: 1vh;
+    margin-left: 4vw; 
+} 
+
+.utility{
+    display: inline-flex; 
+    margin-left: 8%; 
+    margin-bottom: 3%;  
+}
+#searchbox{
+    margin-left: 61vw; 
+}
